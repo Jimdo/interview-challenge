@@ -38,6 +38,7 @@ spring:
     name: interview-challenge
 
 springdoc:
+  writer-with-order-by-keys: true
   swagger-ui:
     path: /docs/swagger-ui.html
   api-docs:

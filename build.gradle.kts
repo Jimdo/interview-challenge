@@ -15,6 +15,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7"
     id("org.flywaydb.flyway") version "12.0.0"
     id("jacoco")
+    id("org.springdoc.openapi-gradle-plugin") version "1.9.0"
 }
 
 jacoco {
@@ -51,7 +52,7 @@ repositories {
 }
 
 val testcontainersVersion = "2.0.3"
-val springDocVersion = "2.8.13"
+val springDocVersion = "3.0.1"
 val mockkVersion = "1.14.9"
 val archunitVersion = "1.4.1"
 val arrowVersion = "2.2.1.1"
@@ -122,4 +123,10 @@ flyway {
 
 tasks.bootRun.configure {
     dependsOn(tasks.flywayMigrate)
+}
+
+openApi {
+    apiDocsUrl.set("http://localhost:8080/docs/api-docs")
+    outputDir.set(layout.buildDirectory.dir("docs"))
+    outputFileName.set("openapi.json")
 }
