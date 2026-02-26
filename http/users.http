@@ -1,0 +1,28 @@
+### List users
+GET {{baseUrl}}/api/users?page=0&pageSize=20
+Accept: application/json
+
+### List users - custom page
+GET {{baseUrl}}/api/users?page=1&pageSize=5
+Accept: application/json
+
+### Get user by ID
+GET {{baseUrl}}/api/users/{{userId}}
+Accept: application/json
+
+### Create user
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "test@example.com"
+}
+
+> {%
+    client.global.set("userId", response.body.id);
+%}
+
+### Delete user
+DELETE {{baseUrl}}/api/users/{{userId}}
+Accept: application/json

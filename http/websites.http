@@ -1,0 +1,32 @@
+### List websites
+GET {{baseUrl}}/api/websites?page=0&pageSize=20
+Accept: application/json
+
+### List websites - custom page
+GET {{baseUrl}}/api/websites?page=1&pageSize=5
+Accept: application/json
+
+### List websites - filter by user
+GET {{baseUrl}}/api/websites?userId={{userId}}
+Accept: application/json
+
+### Get website by ID
+GET {{baseUrl}}/api/websites/{{websiteId}}
+Accept: application/json
+
+### Create website
+POST {{baseUrl}}/api/websites
+Content-Type: application/json
+Accept: application/json
+
+{
+  "userId": "{{userId}}"
+}
+
+> {%
+    client.global.set("websiteId", response.body.id);
+%}
+
+### Delete website
+DELETE {{baseUrl}}/api/websites/{{websiteId}}
+Accept: application/json
