@@ -35,5 +35,10 @@ out/
 ### Local data ###
 /tmp
 
+### Frontend ###
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo
+
 ### MacOS ###
 .DS_Store

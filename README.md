@@ -85,3 +85,32 @@ Tests use Testcontainers to spin up a PostgreSQL instance automatically — no r
 | GET    | /api/websites/{id}  | Get website by ID  |
 | POST   | /api/websites       | Create a website   |
 | DELETE | /api/websites/{id}  | Delete a website   |
+
+## Frontend
+
+A React SPA that consumes the backend API. Located in the `frontend/` directory.
+
+**Stack:** Vite + React 19 + TypeScript + SCSS Modules + React Router 7
+
+### Setup
+
+```sh
+cd frontend
+npm install
+```
+
+### Development
+
+```sh
+npm run dev
+```
+
+Starts on `http://localhost:3000`. The Vite dev server proxies `/api` requests to `http://localhost:8080`, so make sure the backend is running.
+
+### Build
+
+```sh
+npm run build
+```
+
+Output goes to `frontend/dist/`.

@@ -1,0 +1,21 @@
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.header {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+}
+
+.main {
+  padding-bottom: 2rem;
+}
