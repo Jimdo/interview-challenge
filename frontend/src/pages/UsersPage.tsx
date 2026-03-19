@@ -8,6 +8,7 @@ export function UsersPage() {
   const { data, error, loading, refetch } = useApi(() => listUsers(), []);
   const [email, setEmail] = useState("");
   const [formError, setFormError] = useState<string | null>(null);
+  const [filterText, setFilterText] = useState("");
 
   async function handleCreate(e: FormEvent) {
     e.preventDefault();
@@ -50,38 +51,61 @@ export function UsersPage() {
       {error && <p className={styles.error}>{error.message}</p>}
 
       {data && (
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>Email</th>
-              <th>Created</th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            {data.users.map((user) => (
-              <tr key={user.id}>
-                <td>
-                  <Link to={`/users/${user.id}/websites`}>{user.email}</Link>
-                </td>
-                <td>{new Date(user.createdAt).toLocaleDateString()}</td>
-                <td>
-                  <button
-                    className={styles.deleteButton}
-                    onClick={() => handleDelete(user.id)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-            {data.users.length === 0 && (
+        <>
+          <div className={styles.toolbar}>
+            <input
+              type="text"
+              placeholder="Filter by email…"
+              value={filterText}
+              onChange={(e) => setFilterText(e.target.value)}
+              className={styles.filterInput}
+            />
+            <button className={styles.deleteAllButton}>Delete All</button>
+          </div>
+
+          <table className={styles.table}>
+            <thead>
               <tr>
-                <td colSpan={3}>No users yet.</td>
+                <th>
+                  <div className={styles.sortHeader} onClick={() => {}}>
+                    Email
+                    <span className={styles.sortIcon}>↕</span>
+                  </div>
+                </th>
+                <th>
+                  <div className={styles.sortHeader} onClick={() => {}}>
+                    Created
+                    <span className={styles.sortIcon}>↕</span>
+                  </div>
+                </th>
+                <th />
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {data.users.map((user) => (
+                <tr key={user.id}>
+                  <td>
+                    <Link to={`/users/${user.id}/websites`}>{user.email}</Link>
+                  </td>
+                  <td>{new Date(user.createdAt).toLocaleDateString()}</td>
+                  <td>
+                    <button
+                      className={styles.deleteButton}
+                      onClick={() => handleDelete(user.id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+              {data.users.length === 0 && (
+                <tr>
+                  <td colSpan={3}>No users yet.</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </>
       )}
     </div>
   );
