@@ -46,24 +46,15 @@ Key patterns:
 
 ## Prerequisites
 
-- Java 21
-- Docker
+- Docker (at least 4 GB memory allocated to the Docker VM)
 
 ## Getting Started
 
-Start the database:
-
 ```sh
-docker compose up -d
+docker compose up --build
 ```
 
-Run the application:
-
-```sh
-./gradlew bootRun
-```
-
-The API is available at `http://localhost:8080`. Swagger UI is at `http://localhost:8080/docs/swagger-ui.html`.
+The frontend is available at `http://localhost:3000`. The API is available at `http://localhost:8080`. Swagger UI is at `http://localhost:8080/docs/swagger-ui.html`.
 
 ## Running Tests
 
