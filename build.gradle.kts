@@ -5,6 +5,13 @@ buildscript {
     dependencies {
         classpath("org.flywaydb:flyway-database-postgresql:12.0.0")
     }
+    dependencyLocking {
+        lockAllConfigurations()
+    }
+}
+
+dependencyLocking {
+    lockAllConfigurations()
 }
 plugins {
     val kotlinVersion = "2.3.10"
