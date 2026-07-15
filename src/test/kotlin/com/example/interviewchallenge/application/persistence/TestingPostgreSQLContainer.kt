@@ -28,7 +28,7 @@ internal class TestingPostgreSQLContainer private constructor() :
     }
 
     companion object {
-        private const val IMAGE_VERSION = "postgres:16"
+        private const val IMAGE_VERSION = "postgres:18"
         private val container: TestingPostgreSQLContainer = TestingPostgreSQLContainer()
         val instance: TestingPostgreSQLContainer
             get() {

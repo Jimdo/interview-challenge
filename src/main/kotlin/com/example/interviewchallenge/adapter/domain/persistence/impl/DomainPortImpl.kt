@@ -10,7 +10,7 @@ import com.example.interviewchallenge.core.domain.model.CreateDomainDomain
 import com.example.interviewchallenge.core.domain.model.DomainDomain
 import com.example.interviewchallenge.core.domain.model.DomainError
 import com.example.interviewchallenge.core.domain.port.DomainPort
-import mu.KotlinLogging
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.stereotype.Service
 import java.util.UUID

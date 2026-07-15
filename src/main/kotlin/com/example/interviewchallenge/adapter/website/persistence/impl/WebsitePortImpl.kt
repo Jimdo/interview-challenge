@@ -10,7 +10,7 @@ import com.example.interviewchallenge.core.website.model.CreateWebsiteDomain
 import com.example.interviewchallenge.core.website.model.WebsiteDomain
 import com.example.interviewchallenge.core.website.model.WebsiteError
 import com.example.interviewchallenge.core.website.port.WebsitePort
-import mu.KotlinLogging
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable

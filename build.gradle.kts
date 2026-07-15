@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
     dependencies {
-        classpath("org.flywaydb:flyway-database-postgresql:12.0.0")
+        classpath("org.flywaydb:flyway-database-postgresql:12.8.1")
     }
     dependencyLocking {
         lockAllConfigurations()
@@ -14,19 +14,19 @@ dependencyLocking {
     lockAllConfigurations()
 }
 plugins {
-    val kotlinVersion = "2.3.10"
+    val kotlinVersion = "2.4.0"
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
-    id("org.springframework.boot") version "4.0.3"
+    id("org.springframework.boot") version "4.1.0"
     id("io.spring.dependency-management") version "1.1.7"
-    id("org.flywaydb.flyway") version "12.0.0"
+    id("org.flywaydb.flyway") version "12.8.1"
     id("jacoco")
     id("org.springdoc.openapi-gradle-plugin") version "1.9.0"
 }
 
 jacoco {
-    toolVersion = "0.8.12"
+    toolVersion = "0.8.15"
 }
 
 tasks.jacocoTestReport {
@@ -58,13 +58,13 @@ repositories {
     mavenCentral()
 }
 
-val testcontainersVersion = "2.0.3"
-val springDocVersion = "3.0.1"
-val mockkVersion = "1.14.9"
-val archunitVersion = "1.4.1"
-val arrowVersion = "2.2.1.1"
-val flywayVersion = "12.0.0"
-val kotlinLoggingVersion = "3.0.5"
+val testcontainersVersion = "2.0.5"
+val springDocVersion = "3.0.3"
+val mockkVersion = "1.14.11"
+val archunitVersion = "1.4.2"
+val arrowVersion = "2.2.2.1"
+val flywayVersion = "12.8.1"
+val kotlinLoggingVersion = "8.0.4"
 
 dependencyManagement {
     imports {
@@ -73,7 +73,7 @@ dependencyManagement {
 }
 
 dependencies {
-    implementation("io.github.microutils:kotlin-logging:$kotlinLoggingVersion")
+    implementation("io.github.oshai:kotlin-logging-jvm:$kotlinLoggingVersion")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 

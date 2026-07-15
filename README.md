@@ -4,10 +4,10 @@ A Spring Boot backend service for managing websites, their versions, and domain 
 
 ## Tech Stack
 
-- Kotlin 2.3.10
-- Spring Boot 4.0.3
-- PostgreSQL 16
-- Gradle 9.3.1
+- Kotlin 2.4.0
+- Spring Boot 4.1.0
+- PostgreSQL 18
+- Gradle 9.6.1
 - Java 21
 
 ## Architecture
@@ -48,6 +48,8 @@ Key patterns:
 
 - Java 21
 - Docker
+- Node.js 22.12 or newer
+- npm 10 or newer
 
 ## Getting Started
 

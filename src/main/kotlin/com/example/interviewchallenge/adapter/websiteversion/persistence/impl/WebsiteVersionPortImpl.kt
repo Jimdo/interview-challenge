@@ -10,7 +10,7 @@ import com.example.interviewchallenge.core.websiteversion.model.CreateWebsiteVer
 import com.example.interviewchallenge.core.websiteversion.model.WebsiteVersionDomain
 import com.example.interviewchallenge.core.websiteversion.model.WebsiteVersionError
 import com.example.interviewchallenge.core.websiteversion.port.WebsiteVersionPort
-import mu.KotlinLogging
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.stereotype.Service
 import java.util.UUID

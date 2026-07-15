@@ -10,7 +10,7 @@ import com.example.interviewchallenge.core.user.model.CreateUserDomain
 import com.example.interviewchallenge.core.user.model.UserDomain
 import com.example.interviewchallenge.core.user.model.UserError
 import com.example.interviewchallenge.core.user.port.UserPort
-import mu.KotlinLogging
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
